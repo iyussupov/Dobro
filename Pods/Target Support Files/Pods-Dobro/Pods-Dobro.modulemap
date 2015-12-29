@@ -1,0 +1,6 @@
+framework module Pods_Dobro {
+  umbrella header "Pods-Dobro-umbrella.h"
+
+  export *
+  module * { export * }
+}

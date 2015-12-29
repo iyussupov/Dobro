@@ -7,21 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F7191C47C29BE4FDC06380E /* Pods_Dobro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7A7C0EB72108F7F77635C6 /* Pods_Dobro.framework */; };
 		5A857FEF1C3270C6005369F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A857FEE1C3270C6005369F5 /* AppDelegate.swift */; };
-		5A857FF11C3270C6005369F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A857FF01C3270C6005369F5 /* ViewController.swift */; };
 		5A857FF41C3270C6005369F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A857FF21C3270C6005369F5 /* Main.storyboard */; };
 		5A857FF61C3270C6005369F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A857FF51C3270C6005369F5 /* Assets.xcassets */; };
 		5A857FF91C3270C6005369F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A857FF71C3270C6005369F5 /* LaunchScreen.storyboard */; };
+		5A8580031C327741005369F5 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8580021C327741005369F5 /* WelcomeVC.swift */; };
+		5A8580051C327BA2005369F5 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8580041C327BA2005369F5 /* RegisterVC.swift */; };
+		5A8580071C327D5F005369F5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8580061C327D5F005369F5 /* LoginVC.swift */; };
+		5A8580091C3285A9005369F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8580081C3285A9005369F5 /* Constants.swift */; };
+		5A85800E1C328C1E005369F5 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A85800D1C328C1E005369F5 /* Images.swift */; };
+		5A8580111C3295AA005369F5 /* GroupsTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8580101C3295AA005369F5 /* GroupsTabVC.swift */; };
+		5A8580131C3295D5005369F5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8580121C3295D5005369F5 /* Utilities.swift */; };
+		5A8580151C329779005369F5 /* ProfileTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8580141C329779005369F5 /* ProfileTabVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FA28DD74660DEFE7194C1CD /* Pods-Dobro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dobro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dobro/Pods-Dobro.debug.xcconfig"; sourceTree = "<group>"; };
 		5A857FEB1C3270C5005369F5 /* Dobro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dobro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A857FEE1C3270C6005369F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A857FF01C3270C6005369F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A857FF31C3270C6005369F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A857FF51C3270C6005369F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A857FF81C3270C6005369F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A857FFA1C3270C6005369F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A8580021C327741005369F5 /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		5A8580041C327BA2005369F5 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		5A8580061C327D5F005369F5 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		5A8580081C3285A9005369F5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5A85800D1C328C1E005369F5 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		5A8580101C3295AA005369F5 /* GroupsTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsTabVC.swift; sourceTree = "<group>"; };
+		5A8580121C3295D5005369F5 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		5A8580141C329779005369F5 /* ProfileTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabVC.swift; sourceTree = "<group>"; };
+		6BD5CEF2863A3B8D9C912B89 /* Pods-Dobro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dobro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dobro/Pods-Dobro.release.xcconfig"; sourceTree = "<group>"; };
+		BC7A7C0EB72108F7F77635C6 /* Pods_Dobro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dobro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F7191C47C29BE4FDC06380E /* Pods_Dobro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		080D27E9D390989107BBE52F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1FA28DD74660DEFE7194C1CD /* Pods-Dobro.debug.xcconfig */,
+				6BD5CEF2863A3B8D9C912B89 /* Pods-Dobro.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5A857FE21C3270C5005369F5 = {
 			isa = PBXGroup;
 			children = (
 				5A857FED1C3270C6005369F5 /* Dobro */,
 				5A857FEC1C3270C5005369F5 /* Products */,
+				080D27E9D390989107BBE52F /* Pods */,
+				5D9DF60F84B63DC4C27A6926 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +84,61 @@
 		5A857FED1C3270C6005369F5 /* Dobro */ = {
 			isa = PBXGroup;
 			children = (
+				5A85800F1C329585005369F5 /* ChatTabs */,
+				5A85800A1C3285ED005369F5 /* Utilities */,
+				5A8580011C3276FF005369F5 /* MainVC */,
+				5A8580001C3276B5005369F5 /* Resourses */,
+				5A8580081C3285A9005369F5 /* Constants.swift */,
+			);
+			path = Dobro;
+			sourceTree = "<group>";
+		};
+		5A8580001C3276B5005369F5 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
 				5A857FEE1C3270C6005369F5 /* AppDelegate.swift */,
-				5A857FF01C3270C6005369F5 /* ViewController.swift */,
-				5A857FF21C3270C6005369F5 /* Main.storyboard */,
 				5A857FF51C3270C6005369F5 /* Assets.xcassets */,
+				5A857FF21C3270C6005369F5 /* Main.storyboard */,
 				5A857FF71C3270C6005369F5 /* LaunchScreen.storyboard */,
 				5A857FFA1C3270C6005369F5 /* Info.plist */,
 			);
-			path = Dobro;
+			name = Resourses;
+			sourceTree = "<group>";
+		};
+		5A8580011C3276FF005369F5 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				5A8580021C327741005369F5 /* WelcomeVC.swift */,
+				5A8580041C327BA2005369F5 /* RegisterVC.swift */,
+				5A8580061C327D5F005369F5 /* LoginVC.swift */,
+			);
+			name = MainVC;
+			sourceTree = "<group>";
+		};
+		5A85800A1C3285ED005369F5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5A85800D1C328C1E005369F5 /* Images.swift */,
+				5A8580121C3295D5005369F5 /* Utilities.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		5A85800F1C329585005369F5 /* ChatTabs */ = {
+			isa = PBXGroup;
+			children = (
+				5A8580101C3295AA005369F5 /* GroupsTabVC.swift */,
+				5A8580141C329779005369F5 /* ProfileTabVC.swift */,
+			);
+			name = ChatTabs;
+			sourceTree = "<group>";
+		};
+		5D9DF60F84B63DC4C27A6926 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC7A7C0EB72108F7F77635C6 /* Pods_Dobro.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A857FFD1C3270C6005369F5 /* Build configuration list for PBXNativeTarget "Dobro" */;
 			buildPhases = (
+				C6406BD5ADE84374E35633C6 /* Check Pods Manifest.lock */,
 				5A857FE71C3270C5005369F5 /* Sources */,
 				5A857FE81C3270C5005369F5 /* Frameworks */,
 				5A857FE91C3270C5005369F5 /* Resources */,
+				0742F7D9A52D6747F108D454 /* Embed Pods Frameworks */,
+				88FC4E0BDCBC0E52DA26A16B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,13 +210,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0742F7D9A52D6747F108D454 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dobro/Pods-Dobro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88FC4E0BDCBC0E52DA26A16B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dobro/Pods-Dobro-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6406BD5ADE84374E35633C6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5A857FE71C3270C5005369F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A857FF11C3270C6005369F5 /* ViewController.swift in Sources */,
+				5A8580091C3285A9005369F5 /* Constants.swift in Sources */,
+				5A85800E1C328C1E005369F5 /* Images.swift in Sources */,
+				5A8580151C329779005369F5 /* ProfileTabVC.swift in Sources */,
+				5A8580051C327BA2005369F5 /* RegisterVC.swift in Sources */,
 				5A857FEF1C3270C6005369F5 /* AppDelegate.swift in Sources */,
+				5A8580071C327D5F005369F5 /* LoginVC.swift in Sources */,
+				5A8580111C3295AA005369F5 /* GroupsTabVC.swift in Sources */,
+				5A8580131C3295D5005369F5 /* Utilities.swift in Sources */,
+				5A8580031C327741005369F5 /* WelcomeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,9 +382,11 @@
 		};
 		5A857FFE1C3270C6005369F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FA28DD74660DEFE7194C1CD /* Pods-Dobro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Dobro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fxofficeapp.dobro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -258,9 +395,11 @@
 		};
 		5A857FFF1C3270C6005369F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BD5CEF2863A3B8D9C912B89 /* Pods-Dobro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Dobro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fxofficeapp.dobro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,6 +425,7 @@
 				5A857FFF1C3270C6005369F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
