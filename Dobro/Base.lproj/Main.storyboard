@@ -193,6 +193,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="Brg-9r-XJt" eventType="touchUpInside" id="3yp-BW-avS"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Gr-Ym-6pf">
                                 <rect key="frame" x="16" y="84" width="343" height="40"/>
@@ -218,6 +221,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="Y1Y-Gu-8Wj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emailField" destination="0Gr-Ym-6pf" id="eyA-u8-6Dx"/>
+                        <outlet property="passwordField" destination="faL-jb-qCh" id="xfA-3n-zcf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sba-tD-tws" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -268,6 +275,9 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="7R6-mG-fg5" eventType="touchUpInside" id="cVl-Z5-YyG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -288,6 +298,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="EIa-Tq-cP3"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emailField" destination="K1x-eR-axw" id="d8h-OJ-e4Y"/>
+                        <outlet property="nameField" destination="HNv-5S-hu9" id="Ztb-6X-MHv"/>
+                        <outlet property="passwordField" destination="EA8-OE-aqV" id="ZLs-SU-pZU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MRH-mx-BHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
