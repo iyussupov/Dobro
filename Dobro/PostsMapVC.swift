@@ -33,7 +33,7 @@ class PostsMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
         let annotationQuery = PFQuery(className: "Post")
         currentLoc = PFGeoPoint(location: MapViewLocationManager.location)
         //annotationQuery.whereKey("location", nearGeoPoint: currentLoc, withinMiles: 10)
-        annotationQuery.whereKey("location", nearGeoPoint: currentLoc, withinKilometers: 0.1)
+        annotationQuery.whereKey("location", nearGeoPoint: currentLoc, withinKilometers: 50)
         annotationQuery.findObjectsInBackgroundWithBlock {
             (posts, error) -> Void in
             if error == nil {
@@ -44,6 +44,8 @@ class PostsMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
                     let point = post["location"] as! PFGeoPoint
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = CLLocationCoordinate2DMake(point.latitude, point.longitude)
+                    annotation.title = post["title"] as? String
+                    annotation.subtitle = post["text"] as? String
                     self.mapView.addAnnotation(annotation)
                 }
                 
