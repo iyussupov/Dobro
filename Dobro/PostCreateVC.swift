@@ -48,17 +48,18 @@ class PostCreateVC: UIViewController {
                         // The object has been saved.
                         
                         let userQuery = PFInstallation.query() as PFQuery!
-//                        userQuery.whereKey("location", nearGeoPoint: geoPoint!, withinKilometers: 50)
-//                        
+                        userQuery.whereKey("location", nearGeoPoint: geoPoint!, withinKilometers: 1)
+//
 //                        let str_CurrentDeviceToken = installation.objectForKey("deviceToken")
-//                        
-//                        print(str_CurrentDeviceToken!)
-//                        
 //                        userQuery.whereKey("deviceToken", notEqualTo: str_CurrentDeviceToken!)
                         
-                        let postId = Post.objectId
+                        let postId = Post.objectId!
+                        let data = [
+                            "alert" : "Help me!!!",
+                            "badge" : "Increment",
+                            "postId":"\(postId)"
+                        ]
                         
-                        let data = ["aps":["alert":"Help me!!!","badge":"Increment"],"postId":"\(postId)"]
                         let push = PFPush()
                         push.setQuery(userQuery)
                         push.setData(data)

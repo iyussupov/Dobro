@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KgP-gf-8gz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vzd-Ib-EBN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -413,7 +413,7 @@
         <!--EventVC-->
         <scene sceneID="rV0-Gj-4rn">
             <objects>
-                <viewController id="4qC-f0-nOJ" customClass="EventVC" customModule="Dobro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="EventVC" storyboardIdentifier="EventVC" id="4qC-f0-nOJ" customClass="EventVC" customModule="Dobro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qXr-3L-GpM"/>
                         <viewControllerLayoutGuide type="bottom" id="Nh1-ji-LMo"/>

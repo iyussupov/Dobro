@@ -53,14 +53,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         
         if let postId = userInfo["postId"] as? String {
+        
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let rootVC = storyboard.instantiateViewControllerWithIdentifier("EventVC") as! EventVC
             
-           
-            let rootViewController = self.window!.rootViewController
-            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            let setViewController = mainStoryboard.instantiateViewControllerWithIdentifier("EventVC") as! EventVC
-            setViewController.post = postId
-            rootViewController!.navigationController!.popToViewController(setViewController, animated: false)
+            if PFUser.currentUser() != nil {
+                rootVC.post = postId
+                let navController = UINavigationController(rootViewController: rootVC)
+                self.window!.rootViewController = navController
+            }
             
         } else {
             PFPush.handlePush(userInfo)

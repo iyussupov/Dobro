@@ -10,7 +10,7 @@ import UIKit
 
 class EventVC: UIViewController {
 
-    var post:String?
+    var post:String!
     
     @IBOutlet weak var postId: UILabel!
     
