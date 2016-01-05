@@ -11,10 +11,10 @@ import Parse
 import ParseFacebookUtilsV4
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
 
     var window: UIWindow?
-
+    var tabBarController: UITabBarController!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
+        
         
         return true
     }
@@ -52,19 +53,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         
-        if let postId = userInfo["postId"] as? String {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let rootVC = storyboard.instantiateViewControllerWithIdentifier("EventVC") as! EventVC
+        if application.applicationState == UIApplicationState.Inactive || application.applicationState == UIApplicationState.Background  {
+
+            if let postId = userInfo["postId"] as? String {
+                let rootVC = storyboard.instantiateViewControllerWithIdentifier("EventVC") as! EventVC
             
-            if PFUser.currentUser() != nil {
-                rootVC.post = postId
-                let navController = UINavigationController(rootViewController: rootVC)
-                self.window!.rootViewController = navController
+                if PFUser.currentUser() != nil {
+                    rootVC.post = postId
+                    let navController = UINavigationController(rootViewController: rootVC)
+                    self.window!.rootViewController = navController
+                }
+            
+            } else {
+                PFPush.handlePush(userInfo)
             }
             
         } else {
-            PFPush.handlePush(userInfo)
+        
+            if PFUser.currentUser() != nil {
+                
+//                let tabVC = tabBarController.viewControllers![1]
+//                tabVC.tabBarItem.badgeValue = "1"
+            }
+            
         }
         
     }

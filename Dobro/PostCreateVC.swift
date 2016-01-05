@@ -12,7 +12,6 @@ import Parse
 class PostCreateVC: UIViewController {
 
     
-    @IBOutlet weak var postTitle: UITextField!
     @IBOutlet weak var postText: UITextField!
     
     override func viewDidLoad() {
@@ -28,7 +27,6 @@ class PostCreateVC: UIViewController {
     }
     
     @IBAction func sendPost(sender: AnyObject) {
-        let title = self.postTitle.text
         let text = self.postText.text
         let user = PFUser.currentUser()
         
@@ -38,7 +36,6 @@ class PostCreateVC: UIViewController {
             if error == nil {
                 let Post = PFObject(className:"Post")
                 
-                Post["title"] = title
                 Post["text"] = text
                 Post["user"] = user
                 Post["location"] = geoPoint

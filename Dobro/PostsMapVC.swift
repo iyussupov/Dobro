@@ -50,8 +50,7 @@ class PostsMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
                     let point = post["location"] as! PFGeoPoint
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = CLLocationCoordinate2DMake(point.latitude, point.longitude)
-                    annotation.title = post["title"] as? String
-                    annotation.subtitle = post["text"] as? String
+                    annotation.title = post["text"] as? String
                     self.mapView.addAnnotation(annotation)
                 }
                 
