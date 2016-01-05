@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F7191C47C29BE4FDC06380E /* Pods_Dobro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7A7C0EB72108F7F77635C6 /* Pods_Dobro.framework */; };
+		5A58F20C1C3BD89800BB4242 /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F20B1C3BD89800BB4242 /* EventVC.swift */; };
 		5A857FEF1C3270C6005369F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A857FEE1C3270C6005369F5 /* AppDelegate.swift */; };
 		5A857FF41C3270C6005369F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A857FF21C3270C6005369F5 /* Main.storyboard */; };
 		5A857FF61C3270C6005369F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A857FF51C3270C6005369F5 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		1FA28DD74660DEFE7194C1CD /* Pods-Dobro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dobro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dobro/Pods-Dobro.debug.xcconfig"; sourceTree = "<group>"; };
+		5A58F20B1C3BD89800BB4242 /* EventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
 		5A5F48701C3BC33A004D85C0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5A857FEB1C3270C5005369F5 /* Dobro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dobro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A857FEE1C3270C6005369F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			children = (
 				5AA2C97C1C3AB4E600ED44A6 /* PostCreateVC.swift */,
 				5AA2C97E1C3AC0CB00ED44A6 /* PostsMapVC.swift */,
+				5A58F20B1C3BD89800BB4242 /* EventVC.swift */,
 			);
 			name = PostVC;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				5AA2C97D1C3AB4E600ED44A6 /* PostCreateVC.swift in Sources */,
 				5A8580131C3295D5005369F5 /* Utilities.swift in Sources */,
 				5A8580031C327741005369F5 /* WelcomeVC.swift in Sources */,
+				5A58F20C1C3BD89800BB4242 /* EventVC.swift in Sources */,
 				5AA2C97A1C3AB3DA00ED44A6 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,7 +348,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stanislav Tykhonov (44Y7CL2ZTW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Stanislav Tykhonov (44Y7CL2ZTW)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -366,6 +371,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "095de779-bb06-4a91-bd89-7f7e381105c2";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -389,7 +395,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stanislav Tykhonov (44Y7CL2ZTW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Stanislav Tykhonov (44Y7CL2ZTW)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -404,6 +411,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "095de779-bb06-4a91-bd89-7f7e381105c2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

@@ -33,9 +33,6 @@ class PostCreateVC: UIViewController {
         let user = PFUser.currentUser()
         
         
-        let installation = PFInstallation.currentInstallation()
-        print("installation: \(installation)")
-        
         PFGeoPoint.geoPointForCurrentLocationInBackground {
             (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
             if error == nil {
@@ -51,24 +48,18 @@ class PostCreateVC: UIViewController {
                         // The object has been saved.
                         
                         let userQuery = PFInstallation.query() as PFQuery!
-                        userQuery.whereKey("location", nearGeoPoint: geoPoint!, withinKilometers: 50)
+//                        userQuery.whereKey("location", nearGeoPoint: geoPoint!, withinKilometers: 50)
+//                        
+//                        let str_CurrentDeviceToken = installation.objectForKey("deviceToken")
+//                        
+//                        print(str_CurrentDeviceToken!)
+//                        
+//                        userQuery.whereKey("deviceToken", notEqualTo: str_CurrentDeviceToken!)
                         
-                        var str_CurrentDeviceToken = installation.objectForKey("deviceToken")
+                        let postId = Post.objectId
                         
-                        print(str_CurrentDeviceToken)
-                        
-                        if str_CurrentDeviceToken == nil {
-                            str_CurrentDeviceToken = "095ba25a8862b7ce7a25bbc698efda31f05c9127ff7f69d44603c7f57bcf7bjo"
-                        }
-                        
-                        print(str_CurrentDeviceToken)
-                        
-                        userQuery.whereKey("deviceToken", notEqualTo: str_CurrentDeviceToken!)
-                        
-                        
-                        let data = ["\(text)":"alert", "1":"badge", "":"sound"]
-                        
-                        let push = PFPush.init()
+                        let data = ["aps":["alert":"Help me!!!","badge":"Increment"],"postId":"\(postId)"]
+                        let push = PFPush()
                         push.setQuery(userQuery)
                         push.setData(data)
                         push.sendPushInBackground()
