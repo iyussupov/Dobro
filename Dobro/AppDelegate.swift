@@ -24,7 +24,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
+        //Push
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
+        
         return true
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        // Store the deviceToken in the current Installation and save it to Parse
+        
+        PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
+            if error == nil {
+                
+                let installation = PFInstallation.currentInstallation()
+                installation.setDeviceTokenFromData(deviceToken)
+                installation["location"] = geoPoint
+                installation.saveInBackground()
+                
+            } else {
+                print ("geoError \(error?.localizedDescription)")
+            }
+        }
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -43,6 +66,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        let currentInstallation = PFInstallation.currentInstallation()
+        currentInstallation.badge = 0
+        currentInstallation.saveEventually()
+        
         FBSDKAppEvents.activateApp()
     }
 

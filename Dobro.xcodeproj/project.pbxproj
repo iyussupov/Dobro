@@ -27,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		1FA28DD74660DEFE7194C1CD /* Pods-Dobro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dobro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dobro/Pods-Dobro.debug.xcconfig"; sourceTree = "<group>"; };
+		5A5F48701C3BC33A004D85C0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5A857FEB1C3270C5005369F5 /* Dobro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dobro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A857FEE1C3270C6005369F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A857FF31C3270C6005369F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -161,6 +162,7 @@
 		5D9DF60F84B63DC4C27A6926 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A5F48701C3BC33A004D85C0 /* CoreLocation.framework */,
 				BC7A7C0EB72108F7F77635C6 /* Pods_Dobro.framework */,
 			);
 			name = Frameworks;

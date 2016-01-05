@@ -20,6 +20,13 @@ class PostsMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if PFUser.currentUser() != nil {
+            
+        }
+        else {
+            Utilities.loginUser(self)
+        }
 
         mapView.showsUserLocation = true
         mapView.delegate = self
@@ -40,7 +47,6 @@ class PostsMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
                 // The find succeeded.
                 
                 for post in posts! {
-                    print(post)
                     let point = post["location"] as! PFGeoPoint
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = CLLocationCoordinate2DMake(point.latitude, point.longitude)
