@@ -30,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         application.registerForRemoteNotifications()
         
         
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"pushNotification" object:nil userInfo:userInfo];
+        
+        
         return true
     }
     
@@ -61,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
                 let rootVC = storyboard.instantiateViewControllerWithIdentifier("EventVC") as! EventVC
             
                 if PFUser.currentUser() != nil {
-                    rootVC.post = postId
+                    rootVC.postKey = postId
                     let navController = UINavigationController(rootViewController: rootVC)
                     self.window!.rootViewController = navController
                 }
@@ -74,8 +77,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         
             if PFUser.currentUser() != nil {
                 
-//                let tabVC = tabBarController.viewControllers![1]
-//                tabVC.tabBarItem.badgeValue = "1"
+               NSNotificationCenter.defaultCenter().postNotificationName("pushNotification", object: nil,  userInfo:userInfo)
+                
             }
             
         }

@@ -10,7 +10,7 @@ import UIKit
 
 class EventVC: UIViewController {
 
-    var post:String!
+    var postKey: String?
     
     @IBOutlet weak var postId: UILabel!
     
@@ -18,7 +18,7 @@ class EventVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.postId.text = "\(post)"
+        self.postId.text = "\(postKey!)"
     }
 
 

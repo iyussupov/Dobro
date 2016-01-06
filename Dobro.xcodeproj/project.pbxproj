@@ -21,6 +21,8 @@
 		5A8580111C3295AA005369F5 /* GroupsTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8580101C3295AA005369F5 /* GroupsTabVC.swift */; };
 		5A8580131C3295D5005369F5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8580121C3295D5005369F5 /* Utilities.swift */; };
 		5A8580151C329779005369F5 /* ProfileTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8580141C329779005369F5 /* ProfileTabVC.swift */; };
+		5A93D33B1C3D0038008A7D35 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A93D33A1C3D0038008A7D35 /* TabBarVC.swift */; };
+		5A93D33D1C3D29BF008A7D35 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A93D33C1C3D29BF008A7D35 /* CustomAnnotation.swift */; };
 		5AA2C97A1C3AB3DA00ED44A6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2C9791C3AB3DA00ED44A6 /* Post.swift */; };
 		5AA2C97D1C3AB4E600ED44A6 /* PostCreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2C97C1C3AB4E600ED44A6 /* PostCreateVC.swift */; };
 		5AA2C97F1C3AC0CB00ED44A6 /* PostsMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2C97E1C3AC0CB00ED44A6 /* PostsMapVC.swift */; };
@@ -44,6 +46,8 @@
 		5A8580101C3295AA005369F5 /* GroupsTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsTabVC.swift; sourceTree = "<group>"; };
 		5A8580121C3295D5005369F5 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		5A8580141C329779005369F5 /* ProfileTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabVC.swift; sourceTree = "<group>"; };
+		5A93D33A1C3D0038008A7D35 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		5A93D33C1C3D29BF008A7D35 /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		5AA2C9791C3AB3DA00ED44A6 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		5AA2C97C1C3AB4E600ED44A6 /* PostCreateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCreateVC.swift; sourceTree = "<group>"; };
 		5AA2C97E1C3AC0CB00ED44A6 /* PostsMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsMapVC.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				5AA2C9791C3AB3DA00ED44A6 /* Post.swift */,
+				5A93D33C1C3D29BF008A7D35 /* CustomAnnotation.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 				5AA2C97C1C3AB4E600ED44A6 /* PostCreateVC.swift */,
 				5AA2C97E1C3AC0CB00ED44A6 /* PostsMapVC.swift */,
 				5A58F20B1C3BD89800BB4242 /* EventVC.swift */,
+				5A93D33A1C3D0038008A7D35 /* TabBarVC.swift */,
 			);
 			name = PostVC;
 			sourceTree = "<group>";
@@ -293,7 +299,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A93D33B1C3D0038008A7D35 /* TabBarVC.swift in Sources */,
 				5A8580091C3285A9005369F5 /* Constants.swift in Sources */,
+				5A93D33D1C3D29BF008A7D35 /* CustomAnnotation.swift in Sources */,
 				5A85800E1C328C1E005369F5 /* Images.swift in Sources */,
 				5A8580151C329779005369F5 /* ProfileTabVC.swift in Sources */,
 				5A8580051C327BA2005369F5 /* RegisterVC.swift in Sources */,

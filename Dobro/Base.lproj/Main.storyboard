@@ -144,10 +144,10 @@
             </objects>
             <point key="canvasLocation" x="2300.5" y="1196.5"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab BarVC-->
         <scene sceneID="fhA-5q-2ne">
             <objects>
-                <tabBarController id="Vzd-Ib-EBN" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vzd-Ib-EBN" customClass="TabBarVC" customModule="Dobro" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="zZw-fb-I0t">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -392,6 +392,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mapView" destination="kNu-Cp-DvQ" id="iXA-C6-PRd"/>
+                        <segue destination="4qC-f0-nOJ" kind="show" identifier="EventVC" id="LUM-w5-v1A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lq4-13-DD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -427,9 +428,7 @@
                             <constraint firstItem="OKE-RY-qf2" firstAttribute="leading" secondItem="yUC-Fy-Q2t" secondAttribute="leadingMargin" id="RIt-sP-usU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Event" id="ebU-Fo-MyC">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ITK-ra-rNY"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Event" id="ebU-Fo-MyC"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="postId" destination="OKE-RY-qf2" id="YB7-wl-a64"/>
@@ -437,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRa-xl-dqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4035.5" y="435.5"/>
+            <point key="canvasLocation" x="3630.5" y="435.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CIH-G1-b7W">
@@ -539,7 +538,7 @@
         <!--Map-->
         <scene sceneID="eQG-4A-hqo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eYa-oR-IqC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mapNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eYa-oR-IqC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" id="V6O-Vl-bQA"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -555,25 +554,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBl-7h-mSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2679.5" y="435.5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="d4b-2f-O2A">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fA3-DE-Qlg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QI7-kd-GTV" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xiO-5C-tCl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="4qC-f0-nOJ" kind="relationship" relationship="rootViewController" id="0XU-Fr-oGH"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="3569.5" y="435.5"/>
         </scene>
     </scenes>
 </document>

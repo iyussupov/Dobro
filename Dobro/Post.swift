@@ -13,9 +13,9 @@ class Post {
     
     private var _featuredImg: PFFile?
     
-    private var _title: String?
-    
     private var _content: String?
+    
+    private var _location: PFGeoPoint?
     
     private var _date: NSDate?
     
@@ -30,12 +30,21 @@ class Post {
     private var _commentCount: Int!
     */
     
-    var title: String? {
-        return _title
-    }
-    
     var content: String? {
         return _content
+    }
+    
+    var location: PFGeoPoint? {
+        return _location
+    }
+    
+    var postKey: String? {
+        return _postKey
+    }
+    
+    
+    var date: NSDate? {
+        return _date
     }
     /*
     var featuredImg: PFFile? {
@@ -46,25 +55,21 @@ class Post {
         return _category
     }
     
-    var date: NSDate? {
-        return _date
-    }
-    
     var imageDesc: String? {
         return _imageDesc
-    }
-    
-    var postKey: String? {
-        return _postKey
     }
     
     var commentCount: Int? {
         return _commentCount
     }
     */
-    init (title: String?, excerpt: String?, content: String? /*, featuredImg: PFFile?, category: String?, date: NSDate?, imageDesc:String?, commentCount:Int?*/ ) {
-        self._title = title
+    init ( content: String?, location: PFGeoPoint?, date: NSDate?, postKey: String? /*, featuredImg: PFFile?, category: String?, imageDesc:String?, commentCount:Int?*/ ) {
+        
         self._content = content
+        self._location = location
+        self._date = date
+        self._postKey = postKey
+        
         /*
         self._category = category
         self._featuredImg = featuredImg
@@ -79,11 +84,11 @@ class Post {
         self._postKey = postKey
         self._date = date
         
-        if let title = dictionary["title"] as? String {
-            self._title = title
+        if let location = dictionary["location"] as? PFGeoPoint {
+            self._location = location
         }
         
-        if let content = dictionary["content"] as? String {
+        if let content = dictionary["text"] as? String {
             self._content = content
         }
         /*
