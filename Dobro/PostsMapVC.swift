@@ -18,6 +18,7 @@ class PostsMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
     var MapViewLocationManager:CLLocationManager! = CLLocationManager()
     var currentLoc: PFGeoPoint! = PFGeoPoint()
     var posts = [Post]()
+    var category: Category!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,8 +61,11 @@ class PostsMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
     }
     
     func getPosts() {
-        
         let annotationQuery = PFQuery(className: "Post")
+        annotationQuery.includeKey("category")
+        if category != nil {
+            annotationQuery.whereKey("category", equalTo: PFObject(withoutDataWithClassName: "Category", objectId: category.categoryId!))
+        }
         currentLoc = PFGeoPoint(location: MapViewLocationManager.location)
         //annotationQuery.whereKey("location", nearGeoPoint: currentLoc, withinMiles: 10)
         annotationQuery.whereKey("location", nearGeoPoint: currentLoc, withinKilometers: 50)
@@ -111,7 +115,7 @@ class PostsMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
                 view.canShowCallout = true
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.animatesDrop = true
-                view.leftCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
+                //view.leftCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
                 view.rightCalloutAccessoryView = UIButton(type: .ContactAdd) as UIView
                 view.pinColor = annotation.color!
                 

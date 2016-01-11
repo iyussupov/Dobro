@@ -21,11 +21,11 @@ class Post {
     
     private var _postKey: String!
     
+    private var _category:String!
+    
     /*
     
     private var _category: String?
-    
-    private var _imageDesc: String?
     
     private var _commentCount: Int!
     */
@@ -46,7 +46,6 @@ class Post {
     var date: NSDate? {
         return _date
     }
-    /*
     var featuredImg: PFFile? {
         return _featuredImg
     }
@@ -55,26 +54,24 @@ class Post {
         return _category
     }
     
-    var imageDesc: String? {
-        return _imageDesc
-    }
+    /*
     
     var commentCount: Int? {
         return _commentCount
     }
     */
-    init ( content: String?, location: PFGeoPoint?, date: NSDate?, postKey: String? /*, featuredImg: PFFile?, category: String?, imageDesc:String?, commentCount:Int?*/ ) {
+    init ( content: String?, location: PFGeoPoint?, date: NSDate?, postKey: String?, featuredImg: PFFile?, category: String? /* commentCount:Int?*/ ) {
         
         self._content = content
         self._location = location
         self._date = date
         self._postKey = postKey
         
-        /*
         self._category = category
         self._featuredImg = featuredImg
         self._date = date
-        self._imageDesc = imageDesc
+        
+        /*
         self._commentCount = commentCount
         */
     }
@@ -91,20 +88,16 @@ class Post {
         if let content = dictionary["text"] as? String {
             self._content = content
         }
-        /*
         
         if let category = dictionary["category"]["categoryName"] as? String {
             self._category = category
-        }
-        
-        if let imageDesc = dictionary["imageDesc"] as? String {
-            self._imageDesc = imageDesc
         }
         
         if let featuredImg = dictionary["featuredImage"] as? PFFile {
             self._featuredImg = featuredImg
         }
         
+        /*
         if let commentCount = dictionary["comments"] as? Int {
             self._commentCount = commentCount
         }

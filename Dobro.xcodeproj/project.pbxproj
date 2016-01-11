@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1F7191C47C29BE4FDC06380E /* Pods_Dobro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7A7C0EB72108F7F77635C6 /* Pods_Dobro.framework */; };
 		5A58F20C1C3BD89800BB4242 /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F20B1C3BD89800BB4242 /* EventVC.swift */; };
+		5A7E86FA1C439617007999DB /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E86F91C439617007999DB /* FeedVC.swift */; };
+		5A7E86FF1C4396AC007999DB /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E86FE1C4396AC007999DB /* PostCell.swift */; };
+		5A7E87011C439EC1007999DB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E87001C439EC1007999DB /* Category.swift */; };
 		5A857FEF1C3270C6005369F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A857FEE1C3270C6005369F5 /* AppDelegate.swift */; };
 		5A857FF41C3270C6005369F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A857FF21C3270C6005369F5 /* Main.storyboard */; };
 		5A857FF61C3270C6005369F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A857FF51C3270C6005369F5 /* Assets.xcassets */; };
@@ -32,6 +35,9 @@
 		1FA28DD74660DEFE7194C1CD /* Pods-Dobro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dobro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dobro/Pods-Dobro.debug.xcconfig"; sourceTree = "<group>"; };
 		5A58F20B1C3BD89800BB4242 /* EventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
 		5A5F48701C3BC33A004D85C0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5A7E86F91C439617007999DB /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		5A7E86FE1C4396AC007999DB /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		5A7E87001C439EC1007999DB /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		5A857FEB1C3270C5005369F5 /* Dobro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dobro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A857FEE1C3270C6005369F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A857FF31C3270C6005369F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,6 +82,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5A7E86FB1C439651007999DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A7E86FE1C4396AC007999DB /* PostCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		5A857FE21C3270C5005369F5 = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				5AA2C9781C3AB3CA00ED44A6 /* Model */,
-				5AA2C97B1C3AB48500ED44A6 /* PostVC */,
+				5A7E86FB1C439651007999DB /* View */,
+				5AA2C97B1C3AB48500ED44A6 /* Controller */,
 				5A8580011C3276FF005369F5 /* LoginVC */,
 				5A85800F1C329585005369F5 /* ChatTabs */,
 				5A85800A1C3285ED005369F5 /* Utilities */,
@@ -153,19 +168,21 @@
 			children = (
 				5AA2C9791C3AB3DA00ED44A6 /* Post.swift */,
 				5A93D33C1C3D29BF008A7D35 /* CustomAnnotation.swift */,
+				5A7E87001C439EC1007999DB /* Category.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		5AA2C97B1C3AB48500ED44A6 /* PostVC */ = {
+		5AA2C97B1C3AB48500ED44A6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				5AA2C97C1C3AB4E600ED44A6 /* PostCreateVC.swift */,
 				5AA2C97E1C3AC0CB00ED44A6 /* PostsMapVC.swift */,
 				5A58F20B1C3BD89800BB4242 /* EventVC.swift */,
 				5A93D33A1C3D0038008A7D35 /* TabBarVC.swift */,
+				5A7E86F91C439617007999DB /* FeedVC.swift */,
 			);
-			name = PostVC;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		5D9DF60F84B63DC4C27A6926 /* Frameworks */ = {
@@ -299,10 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A7E86FF1C4396AC007999DB /* PostCell.swift in Sources */,
 				5A93D33B1C3D0038008A7D35 /* TabBarVC.swift in Sources */,
 				5A8580091C3285A9005369F5 /* Constants.swift in Sources */,
 				5A93D33D1C3D29BF008A7D35 /* CustomAnnotation.swift in Sources */,
 				5A85800E1C328C1E005369F5 /* Images.swift in Sources */,
+				5A7E87011C439EC1007999DB /* Category.swift in Sources */,
+				5A7E86FA1C439617007999DB /* FeedVC.swift in Sources */,
 				5A8580151C329779005369F5 /* ProfileTabVC.swift in Sources */,
 				5A8580051C327BA2005369F5 /* RegisterVC.swift in Sources */,
 				5A857FEF1C3270C6005369F5 /* AppDelegate.swift in Sources */,
