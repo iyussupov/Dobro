@@ -63,13 +63,13 @@ class PostCell: UITableViewCell {
         if let date = post.date where date != "" {
             
             let seconds = NSDate().timeIntervalSinceDate(date)
-            self.dateLbl.text = Utilities.timeElapsed(seconds)
+            self.dateLbl.text = Utilities.timeElapsed(seconds).uppercaseString
             
         }
         
         if let authorName = post.authorName where authorName != "" {
             
-            self.authorName.text = authorName
+            self.authorName.text = authorName.uppercaseString
             
         }
         
@@ -121,12 +121,11 @@ class PostCell: UITableViewCell {
                     // Place details
                     var placeMark: CLPlacemark!
                     placeMark = placemarks?[0]
-                    print(placeMark.addressDictionary)
                     
                     let city = placeMark.addressDictionary!["City"] as? String
                     let country = placeMark.addressDictionary!["CountryCode"] as? String
                     
-                    self.authorLocationLbl.text = "\(city!), \(country!)"
+                    self.authorLocationLbl.text = "\(city!.uppercaseString), \(country!.uppercaseString)"
                     
                     
                 })

@@ -476,7 +476,7 @@
             </objects>
             <point key="canvasLocation" x="1800.5" y="1196.5"/>
         </scene>
-        <!--FeedVC-->
+        <!--Feed-->
         <scene sceneID="esj-fW-wgJ">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="GP5-8w-2ld" customClass="FeedVC" customModule="Dobro" customModuleProvider="target" sceneMemberID="viewController">
@@ -552,11 +552,11 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvx-jT-6EH">
-                                                            <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                             <color key="backgroundColor" red="0.98431372549019602" green="0.71764705882352942" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="42" id="15j-xH-bKN"/>
-                                                                <constraint firstAttribute="height" constant="21" id="fZy-Cp-xPj"/>
+                                                                <constraint firstAttribute="width" constant="40" id="15j-xH-bKN"/>
+                                                                <constraint firstAttribute="height" constant="40" id="fZy-Cp-xPj"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -647,11 +647,11 @@
                                                         <constraint firstAttribute="bottom" secondItem="ccA-Cb-ln0" secondAttribute="bottom" id="D3M-2b-Zky"/>
                                                         <constraint firstItem="ccA-Cb-ln0" firstAttribute="leading" secondItem="Cvx-jT-6EH" secondAttribute="trailing" id="Hef-tl-ydS"/>
                                                         <constraint firstItem="4xw-fm-Hb5" firstAttribute="leading" secondItem="ccA-Cb-ln0" secondAttribute="trailing" id="MwJ-XI-Ml9"/>
-                                                        <constraint firstItem="Cvx-jT-6EH" firstAttribute="top" secondItem="Ome-dN-4Vo" secondAttribute="top" constant="8" id="NTG-Sb-YAK"/>
+                                                        <constraint firstItem="Cvx-jT-6EH" firstAttribute="top" secondItem="Ome-dN-4Vo" secondAttribute="top" id="NTG-Sb-YAK"/>
                                                         <constraint firstItem="ccA-Cb-ln0" firstAttribute="centerY" secondItem="Ome-dN-4Vo" secondAttribute="centerY" id="RkU-N7-OyZ"/>
                                                         <constraint firstAttribute="trailing" secondItem="4xw-fm-Hb5" secondAttribute="trailing" id="SZR-EX-ah6"/>
                                                         <constraint firstAttribute="bottom" secondItem="Pcv-bm-iRV" secondAttribute="bottom" id="eB0-C6-b2g"/>
-                                                        <constraint firstItem="Cvx-jT-6EH" firstAttribute="leading" secondItem="Ome-dN-4Vo" secondAttribute="leading" constant="8" id="fvh-9F-4qq"/>
+                                                        <constraint firstItem="Cvx-jT-6EH" firstAttribute="leading" secondItem="Ome-dN-4Vo" secondAttribute="leading" id="fvh-9F-4qq"/>
                                                         <constraint firstItem="ccA-Cb-ln0" firstAttribute="centerX" secondItem="Ome-dN-4Vo" secondAttribute="centerX" id="lQ2-Pe-DeB"/>
                                                         <constraint firstItem="ccA-Cb-ln0" firstAttribute="width" secondItem="Ome-dN-4Vo" secondAttribute="width" id="v5W-Jq-h61"/>
                                                         <constraint firstItem="ccA-Cb-ln0" firstAttribute="top" secondItem="Ome-dN-4Vo" secondAttribute="top" id="vqh-Me-UXx"/>
@@ -714,7 +714,7 @@
                             <constraint firstItem="CvX-N1-MpA" firstAttribute="leading" secondItem="GqS-T7-e6q" secondAttribute="leading" id="tIh-Ru-gK7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wG6-HV-LkJ"/>
+                    <navigationItem key="navigationItem" title="Feed" id="wG6-HV-LkJ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="CvX-N1-MpA" id="b7M-Oy-pXp"/>
