@@ -533,6 +533,24 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ome-dN-4Vo">
                                                     <rect key="frame" x="0.0" y="97" width="375" height="150"/>
                                                     <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ccA-Cb-ln0">
+                                                            <rect key="frame" x="-1" y="0.0" width="376" height="150"/>
+                                                            <subviews>
+                                                                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="CRY-G5-XHL">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="376" height="150"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="150" id="Rg1-9x-pHA"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="CRY-G5-XHL" firstAttribute="top" secondItem="ccA-Cb-ln0" secondAttribute="top" id="22t-Or-4EF"/>
+                                                                <constraint firstAttribute="trailing" secondItem="CRY-G5-XHL" secondAttribute="trailing" id="gRB-uV-MUn"/>
+                                                                <constraint firstItem="CRY-G5-XHL" firstAttribute="leading" secondItem="ccA-Cb-ln0" secondAttribute="leading" id="tbF-Cj-T08"/>
+                                                                <constraint firstAttribute="bottom" secondItem="CRY-G5-XHL" secondAttribute="bottom" id="xKj-j4-xSp"/>
+                                                            </constraints>
+                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvx-jT-6EH">
                                                             <rect key="frame" x="8" y="8" width="42" height="21"/>
                                                             <color key="backgroundColor" red="0.98431372549019602" green="0.71764705882352942" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -621,27 +639,33 @@
                                                                 </mask>
                                                             </variation>
                                                         </view>
-                                                        <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="CRY-G5-XHL">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="150" id="Rg1-9x-pHA"/>
-                                                            </constraints>
-                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="wrI-WP-hwQ" secondAttribute="trailing" id="1lo-Qd-cjy"/>
                                                         <constraint firstItem="Pcv-bm-iRV" firstAttribute="leading" secondItem="Ome-dN-4Vo" secondAttribute="leading" id="68Z-rg-YGW"/>
-                                                        <constraint firstAttribute="trailing" secondItem="CRY-G5-XHL" secondAttribute="trailing" id="EUo-rJ-TFv"/>
-                                                        <constraint firstItem="CRY-G5-XHL" firstAttribute="leading" secondItem="Ome-dN-4Vo" secondAttribute="leading" id="LyI-A9-hWv"/>
+                                                        <constraint firstItem="ccA-Cb-ln0" firstAttribute="height" secondItem="Ome-dN-4Vo" secondAttribute="height" id="6Ie-yY-Qtr"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ccA-Cb-ln0" secondAttribute="bottom" id="D3M-2b-Zky"/>
+                                                        <constraint firstItem="ccA-Cb-ln0" firstAttribute="leading" secondItem="Cvx-jT-6EH" secondAttribute="trailing" id="Hef-tl-ydS"/>
+                                                        <constraint firstItem="4xw-fm-Hb5" firstAttribute="leading" secondItem="ccA-Cb-ln0" secondAttribute="trailing" id="MwJ-XI-Ml9"/>
                                                         <constraint firstItem="Cvx-jT-6EH" firstAttribute="top" secondItem="Ome-dN-4Vo" secondAttribute="top" constant="8" id="NTG-Sb-YAK"/>
-                                                        <constraint firstItem="CRY-G5-XHL" firstAttribute="top" secondItem="Ome-dN-4Vo" secondAttribute="top" id="Pu3-js-aVd"/>
+                                                        <constraint firstItem="ccA-Cb-ln0" firstAttribute="centerY" secondItem="Ome-dN-4Vo" secondAttribute="centerY" id="RkU-N7-OyZ"/>
                                                         <constraint firstAttribute="trailing" secondItem="4xw-fm-Hb5" secondAttribute="trailing" id="SZR-EX-ah6"/>
                                                         <constraint firstAttribute="bottom" secondItem="Pcv-bm-iRV" secondAttribute="bottom" id="eB0-C6-b2g"/>
                                                         <constraint firstItem="Cvx-jT-6EH" firstAttribute="leading" secondItem="Ome-dN-4Vo" secondAttribute="leading" constant="8" id="fvh-9F-4qq"/>
-                                                        <constraint firstAttribute="bottom" secondItem="CRY-G5-XHL" secondAttribute="bottom" id="tUP-P5-xl1"/>
+                                                        <constraint firstItem="ccA-Cb-ln0" firstAttribute="centerX" secondItem="Ome-dN-4Vo" secondAttribute="centerX" id="lQ2-Pe-DeB"/>
+                                                        <constraint firstItem="ccA-Cb-ln0" firstAttribute="width" secondItem="Ome-dN-4Vo" secondAttribute="width" id="v5W-Jq-h61"/>
+                                                        <constraint firstItem="ccA-Cb-ln0" firstAttribute="top" secondItem="Ome-dN-4Vo" secondAttribute="top" id="vqh-Me-UXx"/>
                                                         <constraint firstAttribute="bottom" secondItem="4xw-fm-Hb5" secondAttribute="bottom" id="xuB-l6-pvy"/>
                                                         <constraint firstItem="wrI-WP-hwQ" firstAttribute="top" secondItem="Ome-dN-4Vo" secondAttribute="top" id="zgu-Hx-JPR"/>
                                                     </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="D3M-2b-Zky"/>
+                                                            <exclude reference="Hef-tl-ydS"/>
+                                                            <exclude reference="vqh-Me-UXx"/>
+                                                            <exclude reference="MwJ-XI-Ml9"/>
+                                                        </mask>
+                                                    </variation>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.80424182046979864" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -672,6 +696,7 @@
                                         <connections>
                                             <outlet property="categoryLbl" destination="Eaf-Df-21u" id="aAD-WG-pkM"/>
                                             <outlet property="dateLbl" destination="zXs-3A-GHg" id="izk-0Z-B4p"/>
+                                            <outlet property="distanceLbl" destination="08T-Lr-Hgs" id="U5Y-5G-5dv"/>
                                             <outlet property="excerptLbl" destination="Gjg-Oo-ezY" id="Idc-h2-1xm"/>
                                             <outlet property="featuredImg" destination="CRY-G5-XHL" id="dF7-AE-nCW"/>
                                         </connections>
@@ -691,6 +716,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="CvX-N1-MpA" id="b7M-Oy-pXp"/>
+                        <segue destination="4qC-f0-nOJ" kind="show" identifier="EventVC" id="Jhr-Q7-xky"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rFv-Oa-cqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -762,4 +788,7 @@
         <image name="avatar_mask" width="50" height="50"/>
         <image name="mask" width="750" height="468"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jhr-Q7-xky"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -57,7 +57,6 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLo
         PostsQuery.countObjectsInBackgroundWithBlock {
             (count: Int32, error: NSError?) -> Void in
             if error == nil {
-                print(count)
                 self.postCount = Int(count)
             }
         }
@@ -69,7 +68,8 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLo
         currentLoc = PFGeoPoint(location: MapViewLocationManager.location)
         PostsQuery.whereKey("location", nearGeoPoint: currentLoc, withinKilometers: 50)
         PostsQuery.includeKey("category")
-        PostsQuery.addAscendingOrder("createdAt")
+        PostsQuery.includeKey("user")
+        PostsQuery.addDescendingOrder("createdAt")
         if category != nil {
             PostsQuery.whereKey("category", equalTo: PFObject(withoutDataWithClassName: "Category", objectId: category.categoryId!))
         }
@@ -81,14 +81,12 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLo
                 self.posts = []
             }
             if error == nil {
-                print(objects)
                 for object in objects! {
                     
                     let key = object.objectId as String!
                     let date = object.createdAt as NSDate!
                     let post = Post(postKey: key, date: date, dictionary: object)
                     self.posts.append(post)
-                    print(self.posts)
                     
                 }
                 
@@ -210,7 +208,17 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLo
         
         let post = self.posts[indexPath.row]
         
-        performSegueWithIdentifier("EventVC", sender: post)
+        performSegueWithIdentifier("EventVC", sender: post.postKey)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "EventVC" {
+            if let eventVC = segue.destinationViewController as? EventVC {
+                if let postKey = sender as? String {
+                    eventVC.postKey = postKey
+                }
+            }
+        }
     }
 
 

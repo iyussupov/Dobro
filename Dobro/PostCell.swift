@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class PostCell: UITableViewCell {
 
@@ -18,6 +19,7 @@ class PostCell: UITableViewCell {
     
     @IBOutlet weak var dateLbl: UILabel!
     
+    @IBOutlet weak var distanceLbl: UILabel!
     
     private var _post: Post?
     
@@ -55,9 +57,8 @@ class PostCell: UITableViewCell {
         
         if let date = post.date where date != "" {
             
-            let Date:NSDateFormatter = NSDateFormatter()
-            Date.dateFormat = "yyyy-MM-dd"
-            self.dateLbl.text = Date.stringFromDate(date)
+            let seconds = NSDate().timeIntervalSinceDate(date)
+            self.dateLbl.text = Utilities.timeElapsed(seconds)
             
         }
         
@@ -72,7 +73,6 @@ class PostCell: UITableViewCell {
                 featuredImage!.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
                     if (error == nil) {
                         let image = UIImage(data:imageData!)!
-                        print(image)
                         self.featuredImg.image = image
                         FeedVC.imageCache.setObject(image, forKey: self.post!.featuredImg!)
                     }
@@ -83,6 +83,28 @@ class PostCell: UITableViewCell {
         } else {
             self.featuredImg.image = UIImage(named: "mask")
         }
+        
+        PFGeoPoint.geoPointForCurrentLocationInBackground({ (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
+            if error == nil {
+                let point = post.location
+                let currentDistance = Double(round(10*geoPoint!.distanceInKilometersTo(point))/10)
+                if currentDistance < 1.0 && currentDistance != 0.0 {
+                    
+                    self.distanceLbl.text = "\(Int(round(1000*geoPoint!.distanceInKilometersTo(point))/1))m"
+                    
+                } else if currentDistance == 0.0 {
+                    
+                    self.distanceLbl.text = "Near"
+                    
+                } else {
+                    
+                    self.distanceLbl.text = "\(currentDistance)km"
+                    
+                }
+            }
+            
+            
+        })
         
     }
 
