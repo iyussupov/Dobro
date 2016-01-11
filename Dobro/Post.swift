@@ -23,6 +23,8 @@ class Post {
     
     private var _category:String!
     
+    private var _authorName:String?
+    
     /*
     
     private var _category: String?
@@ -54,13 +56,17 @@ class Post {
         return _category
     }
     
+    var authorName: String? {
+        return _authorName
+    }
+    
     /*
     
     var commentCount: Int? {
         return _commentCount
     }
     */
-    init ( content: String?, location: PFGeoPoint?, date: NSDate?, postKey: String?, featuredImg: PFFile?, category: String? /* commentCount:Int?*/ ) {
+    init ( content: String?, location: PFGeoPoint?, authorName: String?, date: NSDate?, postKey: String?, featuredImg: PFFile?, category: String? /* commentCount:Int?*/ ) {
         
         self._content = content
         self._location = location
@@ -70,6 +76,7 @@ class Post {
         self._category = category
         self._featuredImg = featuredImg
         self._date = date
+        self._authorName = authorName
         
         /*
         self._commentCount = commentCount
@@ -87,6 +94,10 @@ class Post {
         
         if let content = dictionary["text"] as? String {
             self._content = content
+        }
+        
+        if let authorName = dictionary["user"]["fullname"] as? String {
+            self._authorName = authorName
         }
         
         if let category = dictionary["category"]["categoryName"] as? String {

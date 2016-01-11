@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import MapKit
 
 class PostCell: UITableViewCell {
 
@@ -20,6 +21,10 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var dateLbl: UILabel!
     
     @IBOutlet weak var distanceLbl: UILabel!
+    
+    @IBOutlet weak var authorName: UILabel!
+    
+    @IBOutlet weak var authorLocationLbl: UILabel!
     
     private var _post: Post?
     
@@ -62,6 +67,12 @@ class PostCell: UITableViewCell {
             
         }
         
+        if let authorName = post.authorName where authorName != "" {
+            
+            self.authorName.text = authorName
+            
+        }
+        
         if post.featuredImg != nil {
             
             if img != nil {
@@ -101,6 +112,27 @@ class PostCell: UITableViewCell {
                     self.distanceLbl.text = "\(currentDistance)km"
                     
                 }
+                
+                let geoCoder = CLGeocoder()
+                let location = CLLocation(latitude: geoPoint!.latitude, longitude: geoPoint!.longitude)
+                
+                geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+                    
+                    // Place details
+                    var placeMark: CLPlacemark!
+                    placeMark = placemarks?[0]
+                    print(placeMark.addressDictionary)
+                    
+                    let city = placeMark.addressDictionary!["City"] as? String
+                    let country = placeMark.addressDictionary!["CountryCode"] as? String
+                    
+                    self.authorLocationLbl.text = "\(city!), \(country!)"
+                    
+                    
+                })
+                
+                
+                
             }
             
             

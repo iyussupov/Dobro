@@ -694,6 +694,8 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="authorLocationLbl" destination="wES-0o-g8n" id="NRb-Zh-XjX"/>
+                                            <outlet property="authorName" destination="JZU-BM-Pa6" id="MZg-a2-37V"/>
                                             <outlet property="categoryLbl" destination="Eaf-Df-21u" id="aAD-WG-pkM"/>
                                             <outlet property="dateLbl" destination="zXs-3A-GHg" id="izk-0Z-B4p"/>
                                             <outlet property="distanceLbl" destination="08T-Lr-Hgs" id="U5Y-5G-5dv"/>

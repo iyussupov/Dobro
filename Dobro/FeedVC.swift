@@ -82,7 +82,6 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLo
             }
             if error == nil {
                 for object in objects! {
-                    
                     let key = object.objectId as String!
                     let date = object.createdAt as NSDate!
                     let post = Post(postKey: key, date: date, dictionary: object)
