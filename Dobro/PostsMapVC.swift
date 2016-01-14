@@ -63,11 +63,10 @@ class PostsMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
     func getPosts() {
         let annotationQuery = PFQuery(className: "Post")
         annotationQuery.includeKey("category")
-        if category != nil {
-            annotationQuery.whereKey("category", equalTo: PFObject(withoutDataWithClassName: "Category", objectId: category.categoryId!))
-        }
+//        if category != nil {
+//            annotationQuery.whereKey("category", equalTo: PFObject(withoutDataWithClassName: "Category", objectId: category.categoryId!))
+//        }
         currentLoc = PFGeoPoint(location: MapViewLocationManager.location)
-        //annotationQuery.whereKey("location", nearGeoPoint: currentLoc, withinMiles: 10)
         annotationQuery.whereKey("location", nearGeoPoint: currentLoc, withinKilometers: 50)
         annotationQuery.findObjectsInBackgroundWithBlock {
             (objects, error) -> Void in

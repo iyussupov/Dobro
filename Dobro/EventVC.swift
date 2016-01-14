@@ -12,13 +12,11 @@ class EventVC: UIViewController {
 
     var postKey: String?
     
-    @IBOutlet weak var postId: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.postId.text = "\(postKey!)"
+        
     }
 
 
