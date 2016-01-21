@@ -61,40 +61,45 @@ class PostsMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
     }
     
     func getPosts() {
-        let annotationQuery = PFQuery(className: "Post")
-        annotationQuery.includeKey("category")
-//        if category != nil {
-//            annotationQuery.whereKey("category", equalTo: PFObject(withoutDataWithClassName: "Category", objectId: category.categoryId!))
-//        }
-        currentLoc = PFGeoPoint(location: MapViewLocationManager.location)
-        annotationQuery.whereKey("location", nearGeoPoint: currentLoc, withinKilometers: 50)
-        annotationQuery.findObjectsInBackgroundWithBlock {
-            (objects, error) -> Void in
+        PFGeoPoint.geoPointForCurrentLocationInBackground({ (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
             if error == nil {
-                // The find succeeded.
-                
-                for object in objects! {
-                    
-                    let key = object.objectId as String!
-                    let date = object.createdAt as NSDate!
-                    let post = Post(postKey: key, date: date, dictionary: object)
-                    
-                    let point = post.location
-                    
-                    let coordinate = CLLocationCoordinate2DMake(point!.latitude, point!.longitude)
-                    let ann = CustomAnnotation(identifier: key, title: post.content!, subtitle: "", coordinate: coordinate, color: .Red)
-                    
-                    self.mapView.addAnnotation(ann)
-                    
-                    self.posts.append(post)
-                    
+                let annotationQuery = PFQuery(className: "Post")
+                annotationQuery.includeKey("category")
+                //        if category != nil {
+                //            annotationQuery.whereKey("category", equalTo: PFObject(withoutDataWithClassName: "Category", objectId: category.categoryId!))
+                //        }
+                annotationQuery.whereKey("location", nearGeoPoint: geoPoint!, withinKilometers: 50)
+                annotationQuery.findObjectsInBackgroundWithBlock {
+                    (objects, error) -> Void in
+                    if error == nil {
+                        // The find succeeded.
+                        
+                        for object in objects! {
+                            
+                            let key = object.objectId as String!
+                            let date = object.createdAt as NSDate!
+                            let post = Post(postKey: key, date: date, dictionary: object)
+                            
+                            let point = post.location
+                            
+                            let coordinate = CLLocationCoordinate2DMake(point!.latitude, point!.longitude)
+                            let ann = CustomAnnotation(identifier: key, title: post.content!, subtitle: "", coordinate: coordinate, color: .Red)
+                            
+                            self.mapView.addAnnotation(ann)
+                            
+                            self.posts.append(post)
+                            
+                        }
+                        
+                    } else {
+                        // Log details of the failure
+                        print("Error: \(error)")
+                    }
                 }
-                
             } else {
-                // Log details of the failure
-                print("Error: \(error)")
+                print(error.debugDescription)
             }
-        }
+        })
     }
     
     func mapView(mapView: MKMapView,viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {

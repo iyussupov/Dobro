@@ -8,7 +8,6 @@
 
 import UIKit
 import Parse
-import CoreLocation
 
 class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
 
@@ -24,8 +23,6 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLo
     var loadMoreStatus = false
     var isRefreshing = false
     var preventAnimation = Set<NSIndexPath>()
-    var currentLoc: PFGeoPoint! = PFGeoPoint()
-    var MapViewLocationManager:CLLocationManager! = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,53 +44,61 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLo
     }
     
     func postsCount() {
-        let PostsQuery: PFQuery =  PFQuery(className:"Post")
-        currentLoc = PFGeoPoint(location: MapViewLocationManager.location)
-        PostsQuery.whereKey("location", nearGeoPoint: currentLoc, withinKilometers: 50)
-        
-        if category != nil {
-            PostsQuery.whereKey("category", equalTo: PFObject(withoutDataWithClassName: "Category", objectId: category.categoryId!))
-        }
-        PostsQuery.countObjectsInBackgroundWithBlock {
-            (count: Int32, error: NSError?) -> Void in
+        PFGeoPoint.geoPointForCurrentLocationInBackground({ (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
             if error == nil {
-                self.postCount = Int(count)
+                let PostsQuery: PFQuery =  PFQuery(className:"Post")
+                PostsQuery.whereKey("location", nearGeoPoint: geoPoint!, withinKilometers: 50)
+        
+                if self.category != nil {
+                    PostsQuery.whereKey("category", equalTo: PFObject(withoutDataWithClassName: "Category", objectId: self.category.categoryId!))
+                }
+                PostsQuery.countObjectsInBackgroundWithBlock {
+                    (count: Int32, error: NSError?) -> Void in
+                    if error == nil {
+                        self.postCount = Int(count)
+                    }
+                }
+            } else {
+                print(error.debugDescription)
             }
-        }
+        })
     }
     
     func parseDataFromParse() {
-        
-        let PostsQuery: PFQuery =  PFQuery(className:"Post")
-        currentLoc = PFGeoPoint(location: MapViewLocationManager.location)
-        PostsQuery.whereKey("location", nearGeoPoint: currentLoc, withinKilometers: 50)
-        PostsQuery.includeKey("category")
-        PostsQuery.includeKey("user")
-        PostsQuery.addDescendingOrder("createdAt")
-        if category != nil {
-            PostsQuery.whereKey("category", equalTo: PFObject(withoutDataWithClassName: "Category", objectId: category.categoryId!))
-        }
-        PostsQuery.skip = postSkip
-        PostsQuery.limit = postLimit
-//        PostsQuery.cachePolicy = .NetworkElseCache
-        PostsQuery.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) -> Void in
-            if !self.loadMoreStatus {
-                self.posts = []
-            }
+        PFGeoPoint.geoPointForCurrentLocationInBackground({ (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
             if error == nil {
-                for object in objects! {
-                    let key = object.objectId as String!
-                    let date = object.createdAt as NSDate!
-                    let post = Post(postKey: key, date: date, dictionary: object)
-                    self.posts.append(post)
-                    
+                let PostsQuery: PFQuery =  PFQuery(className:"Post")
+                PostsQuery.whereKey("location", nearGeoPoint: geoPoint!, withinKilometers: 50)
+                PostsQuery.includeKey("category")
+                PostsQuery.includeKey("user")
+                PostsQuery.addDescendingOrder("createdAt")
+                if self.category != nil {
+                    PostsQuery.whereKey("category", equalTo: PFObject(withoutDataWithClassName: "Category", objectId: self.category.categoryId!))
                 }
+                PostsQuery.skip = self.postSkip
+                PostsQuery.limit = self.postLimit
+//              PostsQuery.cachePolicy = .NetworkElseCache
+                PostsQuery.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) -> Void in
+                    if !self.loadMoreStatus {
+                        self.posts = []
+                    }
+                    if error == nil {
+                        for object in objects! {
+                            let key = object.objectId as String!
+                            let date = object.createdAt as NSDate!
+                            let post = Post(postKey: key, date: date, dictionary: object)
+                            self.posts.append(post)
+                    
+                        }
                 
+                    }
+            
+                self.tableView.reloadData()
+                }
+            } else {
+                print(error.debugDescription)
             }
-            
-            self.tableView.reloadData()
-            
-        }
+        })
     }
     
     func refresh(sender:AnyObject) {
